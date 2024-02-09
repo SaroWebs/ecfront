@@ -9,6 +9,7 @@ const nextConfig = {
     MYSQL_PORT: '3306',
 
     API_URL:'http://localhost:8000/api',
+    RES_URL:'http://localhost:8000/storage',
     JWT_KEY:'secret'
   },
   output: "export",

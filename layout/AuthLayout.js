@@ -24,9 +24,8 @@ export const AuthLayout = (props) => {
         );
     }
 
-
     return (
-        <div className='min-h-screen pb-12'>
+        <div className='min-h-screen pb-[100px] mb-16'>
             <CssBaseline />
             {router.pathname == '/' ? <Header /> : <BackBar page={page} />}
             {children}
@@ -38,7 +37,7 @@ export const AuthLayout = (props) => {
 const BackBar = ({ page }) => {
     const router = useRouter();
     const handleBack = () => {
-        
+
         if (router.pathname !== '/') {
             router.back();
         } else {
@@ -51,10 +50,10 @@ const BackBar = ({ page }) => {
                 <ArrowLeftCircleIcon className='w-6' />
             </IconButton>
             {page &&
-                <h4 className='text-xl'>
+                <h4 className={`text-slate-500 ${page.title.length < 10 ?'text-xl' : 'text-sm font-semibold'}`}>
                     {page.title}
                 </h4>
             }
-        </div>
+        </div >
     );
 }
